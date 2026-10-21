@@ -1,3 +1,4 @@
+
 name: Restful-Booker CI Pipeline
 
 on: [push, pull_request]
@@ -15,10 +16,10 @@ jobs:
         with:
           node-version: '18'
 
-      - name: 3. Cài đặt công cụ Newman
+      - name: 3. Cài đặt Newman
         run: npm install -g newman
 
-      - name: 4. Chạy bộ Test tự động
+      - name: 4. Chạy bộ test tự động
         run: |
-          newman run RestfulBooker_API_Collection.postman_collection.json \
-            -e RestfulBooker_Env.postman_environment.json
+          newman run RestfulBooker.postman_collection.json \
+            -e RestfulBooker.postman_environment.json
